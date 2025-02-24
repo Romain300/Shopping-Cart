@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: all 300ms ease-in-out;
+    will-change: transform;
+    gap: 0.5rem;
+}
+
+.item:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+
+}
+
+.loading {
+    color: white
+    
+}
+
+.image {
+    height: 20rem;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+
+.allItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.title {
+    font-family: "Display",  serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+.price {
+    font-family: 'Roboto', serif;
+    color: #E67E22;
+}
+
+.star {
+    color: yellow;
+}
+
+.reviews,
+form {
+    font-family: 'Roboto', serif;
+}
+
+select {
+    color: white;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex: 1;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+
+.quantity {
+    border: 1px solid #333;
+    transition: all 300ms ease-in-out;
+    border-radius: 1rem;
+    display: flex;
+    margin-bottom: 0.4rem;
+}
+
+.quantity:hover {
+    background-color: #333333;
+}
+
+label {
+    background-color: transparent;
+}
+
+button {
+    color: white;
+    width: 100%;
+    background-color: #E67E22;
+    padding: 0.4rem;
+    border-radius: 1rem;
+    font-family: 'Roboto', serif;
+    font-size: 1rem;
+    transition: all 300ms ease-in-out;
+}
+
+button:hover {
+    background-color: #E67E22;
+    box-shadow: 0 0 10px rgba(255, 133, 27, 0.6);
+    cursor: pointer;
+}
+
+.reviews {
+    margin-bottom: 0.6rem;;
+}
+
