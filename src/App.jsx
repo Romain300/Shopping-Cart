@@ -23,7 +23,7 @@ function App() {
     <>
       <NavBar nbrItems={nbrItems}/>
       {websitePart === "cart" ? (
-        <Cart />
+        <Cart cart={cart} nbrItems={nbrItems}/>
       ) : (
         <Item cart={cart} handleCart={handleCart} handleNbrItems={handleNbrItems} nbrItems={nbrItems}/>
       )}

@@ -10,7 +10,7 @@ function NavBar({nbrItems}) {
             <nav className={styles.navbar}>
                 <div className={styles.title}>OmniBrowse</div>
                 <ol className={styles.navigation}>
-                    <Link className={styles.button} to="/cart">Home</Link>
+                    <Link className={styles.button} to="/">Home</Link>
                     <Link className={styles.button} to="/cart">🛒 {nbrItems}</Link>   
                 </ol>
             </nav>

@@ -12,14 +12,32 @@ function Item({handleCart, cart, handleNbrItems, nbrItems}) {
     //add quantity when added to cart
 
     const addToCart = (event, id) => {
+
         event.preventDefault();
         const nbrItem = quantity[id] || 1;
-        const newItem = items.filter((item) => item.id === id);
-        const updatedCart = [...cart, {...newItem, quantity: nbrItem}]
+        const newItem = items.find((item) => item.id === id);
+
+        
+        const index = cart.findIndex((item) => item.id === id);
+
+        if (index === -1) {
+            const updatedCart = [...cart, {...newItem, quantity: nbrItem}]
+            handleCart(updatedCart);
+        } else {
+            const currentQuantity = cart[index].quantity;
+            const updatedCart = cart.map((item) => 
+                (item.id === id ? {...item, quantity: currentQuantity + nbrItem} : item)
+            )
+            handleCart(updatedCart);
+        }
+
+        
         const updatedNbrItem = nbrItems + nbrItem;
         handleNbrItems(updatedNbrItem);
-        handleCart(updatedCart);
+       
     };
+
+    
 
     const handleQuantity = (event, id) => {
         const newQuantity = parseInt(event.target.value);
