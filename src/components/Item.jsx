@@ -34,6 +34,8 @@ function Item({handleCart, cart, handleNbrItems, nbrItems}) {
         
         const updatedNbrItem = nbrItems + nbrItem;
         handleNbrItems(updatedNbrItem);
+
+        event.target.reset();
        
     };
 
@@ -104,7 +106,7 @@ function Item({handleCart, cart, handleNbrItems, nbrItems}) {
                                         </select>
                                     </div>
 
-                                    <button type="submit">Add to cart</button>
+                                    <button className={styles.addButton} type="submit">Add to cart</button>
                                     
                                 </form>
                             </div>

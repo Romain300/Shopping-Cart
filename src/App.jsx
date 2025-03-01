@@ -1,6 +1,7 @@
 import './App.css'
 import NavBar from './components/NavBar'
 import Item from './components/Item'
+import Footer from './components/Footer'
 import { useState } from 'react'
 import { useParams } from "react-router-dom";
 import Cart from './components/Cart'
@@ -20,14 +21,15 @@ function App() {
   };
 
   return (
-    <>
+    <div className='main-container'>
       <NavBar nbrItems={nbrItems}/>
       {websitePart === "cart" ? (
-        <Cart cart={cart} nbrItems={nbrItems}/>
+        <Cart cart={cart} nbrItems={nbrItems} handleCart={handleCart} handleNbrItems={handleNbrItems}/>
       ) : (
         <Item cart={cart} handleCart={handleCart} handleNbrItems={handleNbrItems} nbrItems={nbrItems}/>
       )}
-    </>
+      <Footer />
+    </div>
   )
 
 }
