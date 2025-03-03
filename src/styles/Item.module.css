@@ -27,7 +27,7 @@
     transform: scale(1.05);
 }
 
-.loading {
+.loadingError {
     color: white;
     display: flex;
     flex: 1;

@@ -74,6 +74,7 @@ function Item({handleCart, cart, handleNbrItems, nbrItems, handleSubTotal}) {
             setItems(response);
         })
         .catch((error) => {
+            console.log("Error caught:", error);
             setError(error);
         })
         .finally(() => setLoading(false)) 
@@ -82,10 +83,14 @@ function Item({handleCart, cart, handleNbrItems, nbrItems, handleSubTotal}) {
     return (
         <>
             {loading && 
-                <div className={styles.loading}>Loading...</div>
+                <div className={styles.loadingError}>Loading...</div>
             }
 
-            {!loading &&
+            {error && !loading &&
+                <div className={styles.loadingError}>Oops...{error.message || "Error server"}</div>
+            }
+
+            {!loading && !error &&
 
                 <section className={styles.allItems}>
 

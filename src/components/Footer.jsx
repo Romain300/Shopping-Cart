@@ -1,9 +1,9 @@
 import styles from "../styles/Footer.module.css"
 import gitHubLogo from '../../public/github-brands-solid.svg';
 
+
 function Footer() {
     return (
-
         <footer>
             <div className={styles.container}>
                 Made with React, By Romain300
@@ -18,3 +18,7 @@ function Footer() {
 };
 
 export default Footer;
+
+
+  
+  
