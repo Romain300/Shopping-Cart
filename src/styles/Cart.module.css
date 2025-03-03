@@ -129,3 +129,20 @@ section {
     display: flex;
     gap: 1rem;
 }
+
+.line {
+    width: 100%;
+    border-bottom: 1px dashed #333;
+}
+
+@media (max-width: 1000px) {
+    .item {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 650px) {
+    .cartContainer{
+        padding: 2rem;
+    }
+}

@@ -28,8 +28,15 @@
 }
 
 .loading {
-    color: white
-    
+    color: white;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', serif;
+    color: #E67E22;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 
 .image {
@@ -37,10 +44,12 @@
     max-width: 100%;
     object-fit: contain;
     border-radius: 1rem;
+    
 }
 
 .info {
     width: 100%;
+    margin-top: auto;
 
 }
 

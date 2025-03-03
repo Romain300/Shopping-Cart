@@ -19,13 +19,13 @@
     background-color: #00D8FF;
     transition: all 0.5s ease-in-out;
     color: #1A1A1A;
-    text-decoration: none;                  
+    text-decoration: none;   
+    transition: all 300ms ease-in-out;            
 }
 
 .button:hover {
     cursor: pointer;
     background-color: #00BCEB;
-    border: 1px solid #333;
     color: #333;
 }
 
@@ -46,3 +46,8 @@
     border-radius: 1rem 0 0 1rem;
 }
 
+@media (max-width: 650px) {
+    .navbar {
+        gap: 0.3rem;
+    }
+}

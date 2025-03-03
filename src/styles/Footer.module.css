@@ -18,11 +18,16 @@ footer {
     flex-direction: column;
     align-items: center;
     margin-top: auto;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .gitHubLink {
     width: 3rem;
     height: auto;
+    transition: all 350ms ease-in-out;
+}
+
+.gitHubLink:hover {
+    transform: scale(1.2);
 }
 

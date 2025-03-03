@@ -2,7 +2,7 @@ import styles from "../styles/Item.module.css"
 import { useState, useEffect } from "react"
 import PropTypes from 'prop-types';
 
-function Item({handleCart, cart, handleNbrItems, nbrItems}) {
+function Item({handleCart, cart, handleNbrItems, nbrItems, handleSubTotal}) {
 
     const [items, setItems] = useState(null);
     const [error, setError] = useState(null);
@@ -22,18 +22,29 @@ function Item({handleCart, cart, handleNbrItems, nbrItems}) {
 
         if (index === -1) {
             const updatedCart = [...cart, {...newItem, quantity: nbrItem}]
+            const subTotal = updatedCart.reduce((total, item) => {
+                return Math.round((total + item.quantity * item.price) * 100) / 100 ;
+            }, 0);
             handleCart(updatedCart);
+            handleSubTotal(subTotal);
         } else {
             const currentQuantity = cart[index].quantity;
             const updatedCart = cart.map((item) => 
                 (item.id === id ? {...item, quantity: currentQuantity + nbrItem} : item)
-            )
+            );
+            const subTotal = updatedCart.reduce((total, item) => {
+                return Math.round((total + item.quantity * item.price) * 100) / 100 ;
+            }, 0);
             handleCart(updatedCart);
+            handleSubTotal(subTotal);
+
         }
 
         
         const updatedNbrItem = nbrItems + nbrItem;
         handleNbrItems(updatedNbrItem);
+
+        
 
         event.target.reset();
        
@@ -71,7 +82,7 @@ function Item({handleCart, cart, handleNbrItems, nbrItems}) {
     return (
         <>
             {loading && 
-                <p className={styles.loading}>Loading...</p>
+                <div className={styles.loading}>Loading...</div>
             }
 
             {!loading &&
@@ -134,5 +145,6 @@ Item.propTypes = {
     cart: PropTypes.array,
     handleNbrItems: PropTypes.func,
     nbrItems: PropTypes.number,
+    handleSubTotal: PropTypes.func
 }
 

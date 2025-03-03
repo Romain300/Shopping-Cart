@@ -10,23 +10,27 @@ function App() {
   const { websitePart } = useParams();
   const [nbrItems, setNbrItems] = useState(0);
   const [cart, setCart] = useState([]);
+  const [subTotal, setSubTotal] = useState(0);
 
   const handleCart = (updatedCart) => {
     setCart(updatedCart);
-    console.log(cart);
   }
 
   const handleNbrItems = (updatedQuantity) => {
     setNbrItems(updatedQuantity);
   };
 
+  const handleSubTotal = (updatedTotal) => {
+    setSubTotal(updatedTotal);
+  };
+
   return (
     <div className='main-container'>
       <NavBar nbrItems={nbrItems}/>
       {websitePart === "cart" ? (
-        <Cart cart={cart} nbrItems={nbrItems} handleCart={handleCart} handleNbrItems={handleNbrItems}/>
+        <Cart cart={cart} nbrItems={nbrItems} handleCart={handleCart} handleNbrItems={handleNbrItems} subTotal={subTotal} handleSubTotal={handleSubTotal}/>
       ) : (
-        <Item cart={cart} handleCart={handleCart} handleNbrItems={handleNbrItems} nbrItems={nbrItems}/>
+        <Item cart={cart} handleCart={handleCart} handleNbrItems={handleNbrItems} nbrItems={nbrItems} handleSubTotal={handleSubTotal}/>
       )}
       <Footer />
     </div>
